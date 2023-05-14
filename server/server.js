@@ -32,15 +32,24 @@ function calculateNumbers(numbers) {
     console.log('Function calculateNumbers was used!' , numbers);
     let answers = 0 ;
 
-    let firstNumber = numbers.firstInput
-    let secondNumber = numbers.secondInput
+    let firstNumber = parseInt(numbers.firstInput)
+    let secondNumber = parseInt(numbers.secondInput)
 
     if(numbers.operator == '+'){
         answers = (firstNumber * 1) + (secondNumber * 1);
         console.log(answers)
         return answers;
         
-    };
+    } if(numbers.operator == '-'){
+        answers = firstNumber - secondNumber
+        return answers;
+    } if(numbers.operator == '*') {
+        answers = firstNumber * secondNumber;
+        return answers;
+    } if(numbers.operator == '/') {
+        answers = firstNumber / secondNumber;
+        return answers;
+    }
     
 };
 
