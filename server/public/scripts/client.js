@@ -8,7 +8,7 @@ function onReady() {
     $('#divide-btn').on('click' , divideInput)
     $('#decider-btns').on('click' , ".clear-btn" , clearInput);
     $('#decider-btns').on('click' , ".equal-btn" , equalHandler);
-    
+
     newCalc = {}
 };
 
@@ -64,12 +64,12 @@ function renderToDom(response){
         )
     }
 
-}
+};
 
 function addInput(){
     console.log('Addition button was clicked');
     newCalc.operator = '+';
-}
+};
 
 function minusInput(){
     console.log('Minus btn was clicked');
@@ -79,12 +79,12 @@ function minusInput(){
 function multiplyInput(){
     console.log('Multiply btn was clicked');
     newCalc.operator = '*';
-}
+};
 
 function divideInput(){
     console.log('Divide btn was clicked');
     newCalc.operator = '/';
-}
+};
 
 function clearInput(){
 

@@ -11,7 +11,7 @@ app.use(express.static('server/public'));
 // making my port listen
 app.listen(PORT, () => {
     console.log ('Server is running on port', PORT)
-})
+});
 
 // this step of body-parser before the get and post routes
 app.use(bodyParser.urlencoded({extended:true}))
@@ -49,7 +49,7 @@ function calculateNumbers(numbers) {
     } if(numbers.operator == '/') {
         answers = firstNumber / secondNumber;
         return answers;
-    }
+    };
     
 };
 
