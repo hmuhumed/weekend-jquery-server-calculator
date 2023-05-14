@@ -16,17 +16,36 @@ app.listen(PORT, () => {
 // this step of body-parser before the get and post routes
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.post('/calculation' , function(req , res){
+app.post('/calculations' , function(req , res){
     console.log('req.body for Post /calculation' , req.body)
 
     let calculation = calculateNumbers(req.body)
     
-    
-})
+    req.body.answers = calculation
+    console.log(calculation)
+    res.sendStatus(201)
+
+    inputData.push(req.body);
+});
 
 function calculateNumbers(numbers) {
     console.log('Function calculateNumbers was used!' , numbers);
     let answers = 0 ;
 
+    let firstNumber = numbers.firstInput
+    let secondNumber = numbers.secondInput
+
+    if(numbers.operator == '+'){
+        answers = (firstNumber * 1) + (secondNumber * 1);
+        console.log(answers)
+        return answers;
+        
+    };
     
-}
+};
+
+app.get('/history' , function(req , res){
+    console.log('Request for /history was made');
+
+    res.send(inputData);
+});

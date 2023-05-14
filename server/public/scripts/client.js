@@ -26,13 +26,28 @@ function equalHandler(event) {
         data: newCalc
     }).then(function(response){
         console.log('Success' , response);
-        // getAnswer();
+        getAnswer();
     }).catch(function(error){
         console.log('Post /calculation error' , error);
     });
 }
 
+function getAnswer(){
+
+
+    $.ajax({
+        method: 'GET',
+        url: '/history'
+    }).then(function(response){
+        console.log('Success' , response);
+        // renderToDom(response);
+    }).catch(function(error){
+        console.log('History error' , error)
+    });
+}
+
 function addInput(){
+    console.log('Addition button was clicked');
     newCalc.operator = '+';
 }
 
