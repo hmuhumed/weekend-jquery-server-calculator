@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const PORT = 5000;
 
-
+let inputData = [];
 
 // Serve up static files (HTML, CSS, Client JS)
 app.use(express.static('server/public'));
@@ -16,14 +16,17 @@ app.listen(PORT, () => {
 // this step of body-parser before the get and post routes
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.get('/input', function(req , res){
-    console.log('Request for /input was made')
-    res.send(req.body);
+app.post('/calculation' , function(req , res){
+    console.log('req.body for Post /calculation' , req.body)
 
-});
+    let calculation = calculateNumbers(req.body)
+    
+    
+})
 
-app.post('/input' , function(req , res){
-    console.log('POST some data: ' , req.body)
-    res.sendStatus(201);
+function calculateNumbers(numbers) {
+    console.log('Function calculateNumbers was used!' , numbers);
+    let answers = 0 ;
 
-});
+    
+}
