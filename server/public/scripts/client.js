@@ -66,22 +66,26 @@ function renderToDom(response){
 
 };
 
-function addInput(){
+function addInput(event){
+    event.preventDefault();
     console.log('Addition button was clicked');
     newCalc.operator = '+';
 };
 
-function minusInput(){
+function minusInput(event){
+    event.preventDefault();
     console.log('Minus btn was clicked');
     newCalc.operator = '-';
 }
 
-function multiplyInput(){
+function multiplyInput(event){
+    event.preventDefault();
     console.log('Multiply btn was clicked');
     newCalc.operator = '*';
 };
 
-function divideInput(){
+function divideInput(event){
+    event.preventDefault();
     console.log('Divide btn was clicked');
     newCalc.operator = '/';
 };
