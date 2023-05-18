@@ -8,8 +8,8 @@ function onReady() {
     $('#divide-btn').on('click' , divideInput)
     $('#decider-btns').on('click' , ".clear-btn" , clearInput);
     $('#decider-btns').on('click' , ".equal-btn" , equalHandler);
-
-    newCalc = {}
+    getHistory();
+    newCalc = {};
 };
 
     
