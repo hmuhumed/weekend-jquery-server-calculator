@@ -95,5 +95,8 @@ function clearInput(){
     console.log('Clear button was clicked');
     $('#first-input').val('');
     $('#second-input').val('');
+
+    // once the client clicks the clear button the answer should also clear
+    $('.answers').val('');
 };
 
